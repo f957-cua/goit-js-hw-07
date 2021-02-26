@@ -23,3 +23,31 @@ const categoryEl = ulEl.children
 const firstResult = `В списке ${categoryEl.length} категории.`
 
 console.log(firstResult);
+
+//=============================================================
+
+const categoryNamesEl = document.querySelectorAll(".item h2")
+//---через "for"----------------
+
+// for (let i = 0; i < categoryNamesEl.length; i ++) {
+//     const el = categoryNamesEl[i];
+//     const textNames = `Категория: ${el.textContent}`;
+//     const quantityNamesElements = el.parentNode.lastElementChild.children.length;
+//     const textQuantity = `Количество элементов: ${quantityNamesElements}`;
+
+//     console.log(textNames);
+//     console.log(textQuantity);
+// };
+
+//------------------------------
+
+
+const resTask = [...categoryNamesEl];
+
+const resume = resTask.map(el => {
+    const textNames = `Категория: ${el.textContent}`;
+    const textQuantity = `Количество элементов: ${el.parentNode.lastElementChild.children.length}`;
+
+    return console.log(textNames, textQuantity);
+})
+
