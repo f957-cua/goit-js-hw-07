@@ -28,36 +28,40 @@ let amount
 
 function createBoxes(event) {
     const newDiv = document.createElement('div');
-    let width = 30;
-    let height = 30;
 
-    const a = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const c = Math.floor(Math.random() * 256);
-    
-    console.log(a, b, c);
+    for (let i = 0; i < amount; i++) {
+        console.log("Privet");
+        const nextDiv = document.createElement('div');
 
-    const color = `rgb(${a}, ${b}, ${c})`;   
-    
-    newDiv.style.width = `${width}px`;
-    newDiv.style.height = `${height}px`;
-    newDiv.style.backgroundColor = color;
-  
+        let width = 30 + 10*i;
+        let height = 30 + 10*i;
+
+        const a = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const c = Math.floor(Math.random() * 256);
+
+        const color = `rgb(${a}, ${b}, ${c})`;   
+
+        nextDiv.style.width = `${width}px`;
+        nextDiv.style.height = `${height}px`;
+        nextDiv.style.backgroundColor = color;
+
+        newDiv.append(nextDiv); 
+    }
     refs.boxesEl.append(newDiv)
-
 };
 
 refs.btnRenderEl.addEventListener('click', () => {
-    console.log("Вешаю слушателя на инпут");
     amount = Number(refs.inputEl.value);
     console.log(amount);
     createBoxes()
-})
+});
 
+refs.btnDestroyEl.addEventListener('click', removeBoxes)
 
-
-
-
+function removeBoxes() {
+    refs.boxesEl.innerHTML = '';
+};
 
 
 
@@ -112,7 +116,5 @@ refs.btnRenderEl.addEventListener('click', () => {
 //     };
 // };
 
-// function removeBoxes() {
-//     refs.boxesEl.remove();
-// };
+
 
