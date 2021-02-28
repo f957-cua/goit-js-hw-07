@@ -61,3 +61,48 @@ refs.btnDestroyEl.addEventListener('click', removeBoxes)
 function removeBoxes() {
     refs.boxesEl.innerHTML = '';
 };
+
+// const refs = {
+// inputEl: document.querySelector("input"),
+// boxesEl: document.querySelector("#boxes"),
+// btnRenderEl: document.querySelector('button[data-action="render"]'),
+// btnDestroyEl: document.querySelector('button[data-action="destroy"]'),
+// };
+
+// const createColor = () => {
+// const a = Math.floor(Math.random() * 256);
+// const b = Math.floor(Math.random() * 256);
+// const c = Math.floor(Math.random() * 256);
+
+// return `rgb(${a}, ${b}, ${c})`;
+// };
+
+// function createBoxe(height, width) {
+// const newDiv = document.createElement("div");
+
+// newDiv.style.width = `${width}px`;
+// newDiv.style.height = `${height}px`;
+// newDiv.style.backgroundColor = createColor();
+// return newDiv;
+// }
+
+// const createBoxes = (amount) => {
+// let arr = [];
+// let size = 30;
+// for (let i = 0; i < amount; i++) {
+// arr.push(createBoxe(size, size));
+// size += 10;
+// }
+// return arr;
+// };
+
+// const updateBox = (newDivs) => {
+// refs.boxesEl.innerHTML = " ";
+// refs.boxesEl.append(...newDivs);
+// };
+
+// refs.btnRenderEl.addEventListener("click", () => {
+// amount = +refs.inputEl.value;
+// let items = createBoxes(amount);
+// updateBox(items);
+// });
