@@ -25,20 +25,7 @@ document.createElement().
 const placeForIngredients = document.querySelector('#ingredients');
 // console.log(placeForIngredients);
 
-//----for------------
-// const elements = [];
 
-// for (let i = 0; i < ingredients.length; i++) {
-//     const ingredient = ingredients[i];
-//     const ingredientEl = document.createElement('li');
-//     ingredientEl.textContent = ingredient;
-
-//     elements.push(ingredientEl);
-//     // console.log(ingredientEl);
-// }
-
-
-//-----map-----------
 const elements = ingredients.map(ingredient => {
     const ingredientEl = document.createElement('li');
     ingredientEl.textContent = ingredient;

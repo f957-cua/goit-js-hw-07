@@ -36,13 +36,19 @@ const images = [
 const insertGallery = document.querySelector('#gallery');
 
 const makeEl = image => {
-    return `
-    <li><img src="${image.src}" alt="${image.alt}"></li>
-    `
+  const liEl = document.createElement('li');
+  const imgEl = document.createElement('img');
+  imgEl.src = image.url;
+  imgEl.alt = image.alt;
+  imgEl.width = 600;
+
+  liEl.append(imgEl)
+
+  return liEl.innerHTML
 };
  
 const makeGalleryEl = images.map(makeEl).join('');
-console.log(makeGalleryEl);
+console.dir(makeGalleryEl);
 
 
 insertGallery.insertAdjacentHTML('afterbegin', makeGalleryEl);
